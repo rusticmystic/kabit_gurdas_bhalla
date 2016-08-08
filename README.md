@@ -1,1 +1,0 @@
-# kabit_gurdas_bhalla
