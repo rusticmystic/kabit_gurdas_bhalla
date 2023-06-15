@@ -12,16 +12,22 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
+
     def _fromUtf8(s):
         return s
 
+
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
+
 except AttributeError:
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -80,7 +86,11 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuKabit_UI.menuAction())
 
         self.retranslateUi(MainWindow)
-        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), self.lineEdit.update)
+        QtCore.QObject.connect(
+            self.horizontalSlider,
+            QtCore.SIGNAL(_fromUtf8("valueChanged(int)")),
+            self.lineEdit.update,
+        )
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -90,4 +100,3 @@ class Ui_MainWindow(object):
         self.eng_button.setText(_translate("MainWindow", "English", None))
         self.ok_button.setText(_translate("MainWindow", "OK", None))
         self.menuKabit_UI.setTitle(_translate("MainWindow", "Kabit UI", None))
-
